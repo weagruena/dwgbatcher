@@ -8,7 +8,7 @@ Project: DWGbatcher
 
 Folder: G:/_PROJ/Ruby/Ruby/Autocad/DWGbatcher/src
 
-Status: 06.01.2011
+Status: 07.01.2011
 
 -----------------------------------
 DWGbatcher.ini		06.01.2011 12:23		# DWGbatcher configuration

@@ -52,7 +52,7 @@ end
 desc "Backup project"
 task :backup => [:config] do
 	Dir.mkdir(@backup) if !File.exists?(@backup)
-  bup = "#{@backup}/#{@proj}_#{Time.now.strftime("%d%m%y")}.zip"
+	bup = "#{@backup}/#{@proj}_#{Time.now.strftime("%d%m%y")}.zip"
 	#Clear backup
 	File.delete(bup) if File.exist?(bup)
 	#~ #Make backup
@@ -76,7 +76,11 @@ task :make_exe => [:config] do
 	#~ File.copy("./readmeD.txt", "../release", true)
 	#~ File.copy("./readmeE.txt", "../release", true)
 	#~ File.copy("./licenseD.txt", "../release", true)
-	#~ File.copy("./licenseE.txt", "../release", true)	
+	#~ File.copy("./licenseE.txt", "../release", true)
+	#~ # Create ZIP
+	Dir.chdir("../release")
+	system("#{@zip} a #{@proj}.zip *.* -r")
+	File.move("./#{@proj}.zip", "../dist", true)
 end
 
 #~ desc "Create installer"
